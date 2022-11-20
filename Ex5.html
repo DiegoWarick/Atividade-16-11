@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>Ex 5</title>
+</head>
+<body>
+<input type="text" id="texto"><br>
+<input type="button" id="botao" value="Enter" style="margin-top: 5px;" onclick="bt()">
+<p id="x"></p>
+ <script>
+    var i, x = "", len = 0, lst = "", r = "";
+    function bt()
+    {
+        r = "";
+    x = document.getElementById("texto").value;
+    len = x.length;
+    lst = x.lastIndexOf(" ");
+        for (i = lst+1; i < len; i++)
+        {
+            r += x.charAt(i);
+        }
+        r += ", ";
+        for (i = 0; i < lst; i++)
+        {
+            r += x.charAt(i);
+        }
+        document.getElementById("x").innerHTML = r;
+        
+    }
+    </script>
+</body>
+</html>

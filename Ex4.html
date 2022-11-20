@@ -1,0 +1,40 @@
+<html>
+<head>
+    <title>Ex 4</title>
+</head>
+<body>
+<input type="text" id="texto"><br>
+<input type="button" id="botao" value="Enter" style="margin-top: 5px;" onclick="bt()">
+<p id="x"></p>
+ <script>
+    var i, x, len = "", ver = "", y = 1;
+    function bt()
+    {
+    x = document.getElementById("texto").value;
+    len = x.length;
+    
+        for (i = 0; i < len; i++)
+        {
+            if (x.charCodeAt(i) != 32)
+            {
+               ver += x.charAt(i);
+            }
+        }
+        len = ver.length;
+        for (i = 0; i < len/2; i++)
+        {
+            if (ver.charAt(i) != ver.charAt(len - 1-  i))
+            {
+                y = 0;
+            }
+        }
+        if (y == 1)
+        {
+            document.getElementById("x").innerHTML = "É um palíndromo";
+        } else{
+            document.getElementById("x").innerHTML = "Não é um palíndromo";
+        }
+    }
+    </script>
+</body>
+</html>

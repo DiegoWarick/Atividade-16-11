@@ -1,0 +1,53 @@
+<html>
+<head>
+    <title>Ex 6</title>
+</head>
+<body>
+<input type="text" id="texto"><br>
+<input type="button" id="botao" value="Enter" style="margin-top: 5px;" onclick="bt()">
+<p id="x"></p>
+ <script>
+    var i, x = "", len = 0, lst, r = "", vrf = 0, frst;
+    function bt()
+    {
+        vrf = 0
+        r = "";
+    x = document.getElementById("texto").value;
+    len = x.length;
+    lst = x.lastIndexOf(" ");
+    frst = x.indexOf(" ");
+        for (i = lst+1; i < len; i++)
+        {
+            r += x.charAt(i);
+        }
+        r = r.toUpperCase();
+        r += ", ";
+        for (i = 0; i <= frst; i++)
+        {
+            r += x.charAt(i);
+        }
+        for(i = frst+1; i < lst; i++)
+        {
+            if (vrf == 1)
+            {
+                r += x.charAt(i).toUpperCase() + ". ";
+                vrf = 0;
+            }
+            if (i == frst+1)
+            {
+                r += x.charAt(i).toUpperCase() + ". ";
+                vrf = 0;
+            }
+            vrf = 0
+            if (x.charAt(i) == " ") {
+                vrf = 1;
+            }
+        }
+        
+
+        document.getElementById("x").innerHTML = r;
+        
+    }
+    </script>
+</body>
+</html>

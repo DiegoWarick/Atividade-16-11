@@ -1,0 +1,37 @@
+<html>
+<head>
+    <title>Ex 1</title>
+</head>
+<body>
+    <div>Em linha:&ensp;<input type="text" id="t1">
+    <input type="button" value="Gerar tabela" onclick="a()"></div>
+    <div style="margin-top: 5px;">Em coluna:&ensp;<input type="text" id="t2">
+    <input type="button" value="Gerar tabela" onclick="b()"></div>
+    <script language="javascript">
+        var texto;
+        var i = 0;
+        function a()
+        {
+           texto = document.getElementById("t1").value;
+           document.write("<table border='2px' style='border-collapse:collapse;'><tr>");
+                while (texto.length > i)
+                {
+                    document.write("<td>" + texto.charAt(i) + "</td>");
+                    i++;
+                }
+                document.write("</tr></table>");
+        }
+        function b()
+        {
+           texto = document.getElementById("t2").value;
+           document.write("<table border='2px' style='border-collapse:collapse;'>");
+                while (texto.length > i)
+                {
+                    document.write("<tr><td>" + texto.charAt(i) + "</td></tr>");
+                    i++;
+                }
+                document.write("</table>");
+        }
+    </script>
+</body>
+</html>

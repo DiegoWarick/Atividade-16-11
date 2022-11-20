@@ -1,0 +1,49 @@
+<html>
+<head>
+    <title>Ex 3</title>
+</head>
+<body>
+<input type="text" id="texto"><br>
+<input type="button" id="botao" value="Enter" style="margin-top: 5px;" onclick="bt()">
+<div id="x"></div>
+
+ <script>
+        var x, dig = 0, con = 0, vog = 0, out = 0, vrf = "";
+    function bt()
+    {
+        dig = 0;
+        con = 0;
+        vog = 0;
+        out = 0;
+        x = document.getElementById("texto").value;
+        for (var i = 0; i < x.length; i++)
+        {
+            if (x.charCodeAt(i) > 47 && (x.charCodeAt(i) < 58))
+            {
+                dig++;
+            } else {
+                if ((x.charCodeAt(i) > 64 && x.charCodeAt(i) < 91) || x.charCodeAt(i) > 96 && x.charCodeAt(i) < 123)
+                {
+                   vrf = x.charAt(i);
+                   vrf = vrf.toUpperCase();
+                   if (vrf == "A" || vrf == "E" || vrf == "I" || vrf == "O" || vrf == "U")
+                   {
+                    vog++;
+                   } else
+                   {
+                    con++;
+                   }
+
+                } else
+                {
+                 out++;   
+                }
+            }
+            
+        }
+        document.getElementById("x").innerHTML = "<table border='2px' style='border-collapse:collapse;'><tr><td>Vogais</td><td>Consoantes</td><td>Dígitos</td><td>Outros</td></tr><tr><td>" + vog + "</td><td>" + con + "</td><td>" + dig + "</td><td>" + out + "</td></tr></table>"
+    }
+
+    </script>
+</body>
+</html>

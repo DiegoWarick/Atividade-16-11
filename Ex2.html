@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>Ex 2</title>
+</head>
+<body>
+    <div>
+    Caracter:&ensp;<input type="text" id="carac"><br>
+    Número:&ensp;<input type="text" id="num" style="margin-top: 5px;"><br>
+    <input type="button" value="Gerar string" id="botao" onclick="teste()" style="margin-top: 5px;"></div>
+    <div id="x"></div>
+    
+    <script>
+        var car;
+        var num;
+        var x;
+        var i;
+        function teste()
+        {
+            car = document.getElementById("carac").value;
+            num = document.getElementById("num").value;
+            x = car;
+            i = 1;
+            while (num > i)
+            {
+                x+= car;
+                i++;
+            }
+           document.getElementById("x").innerHTML = ("<table border='2px' style='border-collapse:collapse;'><tr><td style='padding: 5px;'>" + x + "</td></tr></table>");
+        }        
+    </script>
+</body>
+</html>
